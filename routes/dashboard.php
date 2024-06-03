@@ -33,11 +33,18 @@
             }
         </style>
 
-        <button id="backbtn">Back</button>
-        <button id="logoutbtn">Logout</button>
-        <h1>Online-Voting-System</h1>
-        <hr>
-        <div id="Profile"></div>
-        <div id="Group"></div>
+        <div id="mainSection">
+            <div id="headerSection">
+            <button id="backbtn">Back</button>
+            <button id="logoutbtn">Logout</button>
+            <h1>Online-Voting-System</h1>
+            </div>
+            <hr>
+
+            <div id="Profile">
+            </div>
+
+            <div id="Group"></div>
+        </div>
     </body>
 </html>
