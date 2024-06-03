@@ -4,6 +4,8 @@
     if(!isset($_SESSION['userdata'])) {
         header("location: ../");
     }
+
+    $userdata = $_SESSION['userdata'];
 ?>
 
 <html>
@@ -42,6 +44,11 @@
             <hr>
 
             <div id="Profile">
+                <img src="../uploads/<?php echo $userdata['photo'] ?>" height="200" width="200">
+                <b>Name:</b><br><br>
+                <b>Mobile:</b><br><br>
+                <b>Address:</b><br><br>
+                <b>Status:</b><br><br>
             </div>
 
             <div id="Group"></div>
