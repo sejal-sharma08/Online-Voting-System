@@ -27,7 +27,7 @@ if (mysqli_num_rows($check) > 0) {
 else {
     echo '
             <script>
-                alert("Invalif Credentials or User not found!");
+                alert("Invalid Credentials or User not found!");
                 window.location = "../";
             </script>
             ';
