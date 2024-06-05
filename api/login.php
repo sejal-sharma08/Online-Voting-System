@@ -16,7 +16,7 @@ if (mysqli_num_rows($check) > 0) {
     $groupsdata = mysqli_fetch_all($groups, MYSQLI_ASSOC);
 
     $_SESSION['userdata'] = $userdata;
-    $_SESSION['groups'] = $groupsdata;
+    $_SESSION['groupsdata'] = $groupsdata;
 
     echo '
             <script>

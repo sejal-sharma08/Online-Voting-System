@@ -6,6 +6,8 @@
     }
 
     $userdata = $_SESSION['userdata'];
+    $groupsdata = $_SESSION['groupsdata'];
+    
 ?>
 
 <html>
@@ -36,9 +38,26 @@
 
             #Profile {
                 background-color: white;
-                width: 40%;
+                width: 30%;
                 padding: 20px;
+                float: left;
             }
+
+            #Group {
+                background-color: white;
+                width: 60%;
+                padding: 20px;
+                float: right;
+            }
+
+            #votebtn {
+                padding: 5px;
+                font-size: 15px;
+                border-radius: 5px;
+                background-color: #3498db;
+                color: white;
+            }
+            
         </style>
 
         <div id="mainSection">
@@ -59,7 +78,29 @@
                 <b>Status:</b> <?php echo $userdata['status']?> <br><br>
             </div>
 
-            <div id="Group"></div>
+            <div id="Group">
+                <?php
+                    if($_SESSION['groupsdata']) {
+                        for ($i = 0; $i < count($groupsdata); $i++) {
+                            ?>
+                            <div>
+                                <img style="float: right;" src="../uploads/<?php echo $groupsdata[$i]['photo'] ?>" height="100" width="100">
+                                <b>Group Name: </b><?php echo $groupsdata[$i]['name'] ?><br><br>
+                                <b>Votes: </b><?php echo $groupsdata[$i]['votes'] ?><br><br>
+                                <form action="#">
+                                    <input type="hidden" name="gvotes" value="">
+                                    <input type="submit" name="votebtn " value="Vote" id="votebtn">
+                                </form>
+                            </div>
+                            <hr>
+                            <?php
+                        }
+                    }
+                    else {
+
+                    }
+                ?>
+            </div>
         </div>
     </body>
 </html>
