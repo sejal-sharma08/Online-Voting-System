@@ -15,6 +15,12 @@
 
         $_SESSION['userdata']['status'] = 1;
         $_SESSION['groupsdata'] = $groupsdata;
+        echo '
+            <script>
+                alert("Voting Successful!");
+                window.location = "../routes/dashboard.php";
+            </script>
+            ';
     }
     else {
         echo '

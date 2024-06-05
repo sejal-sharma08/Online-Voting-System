@@ -70,6 +70,14 @@
             #mainpannel {
                 padding: 10px;
             }
+
+            #voted {
+                padding: 5px;
+                font-size: 15px;
+                border-radius: 5px;
+                background-color: green;
+                color: white; 
+            }
             
         </style>
 
@@ -104,7 +112,18 @@
                                 <form action="../api/vote.php" method="post">
                                     <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes'] ?>">
                                     <input type="hidden" name="gid" value="<?php echo $groupsdata[$i]['id'] ?>">
-                                    <input type="submit" name="votebtn " value="Vote" id="votebtn">
+                                    <?php
+                                        if($_SESSION['userdata']['status'] == 0) {
+                                            ?>
+                                                <input type="submit" name="votebtn " value="Vote" id="votebtn">
+                                            <?php
+                                        }
+                                        else {
+                                            ?>
+                                            <button disabled type="button" name="votebtn " value="vote" id="voted">Voted</button>
+                                            <?php
+                                        }
+                                    ?>
                                 </form>
                             </div>
                             <hr>
