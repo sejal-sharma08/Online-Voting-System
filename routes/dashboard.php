@@ -99,7 +99,7 @@
                                 <img style="float: right;" src="../uploads/<?php echo $groupsdata[$i]['photo'] ?>" height="100" width="100">
                                 <b>Group Name: </b><?php echo $groupsdata[$i]['name'] ?><br><br>
                                 <b>Votes: </b><?php echo $groupsdata[$i]['votes'] ?><br><br>
-                                <form action="#">
+                                <form action="#" method="post">
                                     <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes'] ?>">
                                     <input type="submit" name="votebtn " value="Vote" id="votebtn">
                                 </form>
