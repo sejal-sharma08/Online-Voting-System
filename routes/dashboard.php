@@ -76,8 +76,8 @@
         <div id="mainSection">
             <center>
             <div id="headerSection">
-                <button id="backbtn">Back</button>
-                <button id="logoutbtn">Logout</button>
+                <a href="../"><button id="backbtn"> Back</button></a>
+                <a href="logout.php"><button id="logoutbtn">Logout</button></a>
                 <h1>Online-Voting-System</h1>
             </div>
             </center>
