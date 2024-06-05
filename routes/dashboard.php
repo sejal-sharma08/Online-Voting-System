@@ -7,6 +7,13 @@
 
     $userdata = $_SESSION['userdata'];
     $groupsdata = $_SESSION['groupsdata'];
+
+    if ($userdata['status'] == 0) {
+        $status = '<b style="color: red">Not Voted</b>';
+    }
+    else {
+        $status = '<b style="color: green">Voted</b>';
+    }
     
 ?>
 
@@ -57,6 +64,10 @@
                 background-color: #3498db;
                 color: white;
             }
+
+            #mainpannel {
+                padding: 10px;
+            }
             
         </style>
 
@@ -70,12 +81,13 @@
             </center>
             <hr>
 
+            <div id="mainpannel">
             <div id="Profile">
                 <center><img src="../uploads/<?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
                 <b>Name:</b> <?php echo $userdata['name']?> <br><br>
                 <b>Mobile:</b> <?php echo $userdata['mobile']?> <br><br>
                 <b>Address:</b> <?php echo $userdata['address']?> <br><br>
-                <b>Status:</b> <?php echo $userdata['status']?> <br><br>
+                <b>Status:</b> <?php echo $status?> <br><br>
             </div>
 
             <div id="Group">
@@ -88,7 +100,7 @@
                                 <b>Group Name: </b><?php echo $groupsdata[$i]['name'] ?><br><br>
                                 <b>Votes: </b><?php echo $groupsdata[$i]['votes'] ?><br><br>
                                 <form action="#">
-                                    <input type="hidden" name="gvotes" value="">
+                                    <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes'] ?>">
                                     <input type="submit" name="votebtn " value="Vote" id="votebtn">
                                 </form>
                             </div>
@@ -101,6 +113,8 @@
                     }
                 ?>
             </div>
+            </div>
+
         </div>
     </body>
 </html>
