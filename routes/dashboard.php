@@ -32,6 +32,7 @@
                 background-color: #3498db;
                 color: white;
                 float: left;
+                margin: 10px;
             }
 
             #logoutbtn {
@@ -41,6 +42,7 @@
                 background-color: #3498db;
                 color: white;
                 float: right;
+                margin: 10px;
             }
 
             #Profile {
@@ -99,8 +101,9 @@
                                 <img style="float: right;" src="../uploads/<?php echo $groupsdata[$i]['photo'] ?>" height="100" width="100">
                                 <b>Group Name: </b><?php echo $groupsdata[$i]['name'] ?><br><br>
                                 <b>Votes: </b><?php echo $groupsdata[$i]['votes'] ?><br><br>
-                                <form action="#" method="post">
+                                <form action="../api/vote.php" method="post">
                                     <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes'] ?>">
+                                    <input type="hidden" name="gid" value="<?php echo $groupsdata[$i]['id'] ?>">
                                     <input type="submit" name="votebtn " value="Vote" id="votebtn">
                                 </form>
                             </div>
