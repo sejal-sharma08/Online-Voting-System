@@ -36,19 +36,21 @@
         </style>
 
         <div id="mainSection">
+            <center>
             <div id="headerSection">
-            <button id="backbtn">Back</button>
-            <button id="logoutbtn">Logout</button>
-            <h1>Online-Voting-System</h1>
+                <button id="backbtn">Back</button>
+                <button id="logoutbtn">Logout</button>
+                <h1>Online-Voting-System</h1>
             </div>
+            </center>
             <hr>
 
             <div id="Profile">
-                <img src="../uploads/<?php echo $userdata['photo'] ?>" height="200" width="200">
-                <b>Name:</b><br><br>
-                <b>Mobile:</b><br><br>
-                <b>Address:</b><br><br>
-                <b>Status:</b><br><br>
+                <img src="../uploads/<?php echo $userdata['photo'] ?>" height="100" width="100"><br><br>
+                <b>Name:</b> <?php echo $userdata['name']?> <br><br>
+                <b>Mobile:</b> <?php echo $userdata['mobile']?> <br><br>
+                <b>Address:</b> <?php echo $userdata['address']?> <br><br>
+                <b>Status:</b> <?php echo $userdata['status']?> <br><br>
             </div>
 
             <div id="Group"></div>
