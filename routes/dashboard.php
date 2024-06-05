@@ -33,6 +33,12 @@
                 color: white;
                 float: right;
             }
+
+            #Profile {
+                background-color: white;
+                width: 40%;
+                padding: 20px;
+            }
         </style>
 
         <div id="mainSection">
@@ -46,7 +52,7 @@
             <hr>
 
             <div id="Profile">
-                <img src="../uploads/<?php echo $userdata['photo'] ?>" height="100" width="100"><br><br>
+                <center><img src="../uploads/<?php echo $userdata['photo'] ?>" height="100" width="100"></center><br><br>
                 <b>Name:</b> <?php echo $userdata['name']?> <br><br>
                 <b>Mobile:</b> <?php echo $userdata['mobile']?> <br><br>
                 <b>Address:</b> <?php echo $userdata['address']?> <br><br>
